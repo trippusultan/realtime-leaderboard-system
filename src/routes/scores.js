@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { body } from "express-validator";
-import { addScore, getScoreHistory, getUserBrief } from "../db/redis.js";
-import authRequired from "../middleware/auth.js";
+import { addScore, getScoreHistory, getUserBrief, getRank } from "../db/redis.js";
+import { authRequired } from "../middleware/auth.js";
 import ok from "../utils/response.js";
 
 const router = Router();

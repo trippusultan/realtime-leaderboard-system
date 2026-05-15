@@ -4,7 +4,7 @@ services:
   redis:
     image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - "6379:5000"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes
@@ -16,11 +16,11 @@ services:
     build: .
     environment:
       - APP_PORT=${APP_PORT:-3001}
-      - REDIS_URL=redis://redis:6379
+      - REDIS_URL=redis://redis:5000
       - JWT_SECRET=${JWT_SECRET:-change-me}
       - JWT_EXPIRES_IN=${JWT_EXPIRES_IN:-7d}
     ports:
-      - "${APP_PORT:-3001}:3001"
+      - "${APP_PORT:-3001}:5000"
     restart: unless-stopped
 
 volumes:

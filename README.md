@@ -42,7 +42,7 @@ docker compose up
 ### Local (without Docker)
 
 ```bash
-# redis must be running on 127.0.0.1:6379
+# redis must be running on 127.0.0.1:5000
 redis-server &
 npm install
 cp .env.example .env
@@ -53,7 +53,7 @@ npm start
 
 ## API Reference
 
-Base URL: `http://localhost:3001/api`
+Base URL: `http://localhost:5000/api`
 
 ### `POST /auth/register`
 ```json
